@@ -1,1 +1,7 @@
-/* Etch-a-Bloc */
+/* Etch-a-Bloc 
+	dynamically creates grid
+*/
+
+const createGrid = () => {
+
+}
