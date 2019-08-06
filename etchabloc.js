@@ -1,1 +1,1 @@
-/* Etch-a-Block */
+/* Etch-a-Bloc */
