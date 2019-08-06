@@ -15,10 +15,8 @@ function etchABloc() {
 		// TEST LINES:
 		addCSSRules('body', 'text-align: center; background-color: steelblue;', 0);
 
-		// Create HTML container for grid
-		document.body.innerHTML += `<div class="container"></div>`;
 		// TO-DO:  t/s container is null
-		var container = document.getElementById('#container');
+		var container = document.getElementById('container');
 		console.log("container: ", container);
 
 		for(var idx = 1; idx <= this.height; idx++) {
