@@ -11,14 +11,6 @@ body {
 	border: 1px solid blue;
 }
 
-.container {
-	width: 90%;
-	margin: 0 auto 0 auto; 
-	display: grid;
-	grid-template-rows: repeat(16);
-	grid-template-columns: repeat(16);	
-}
-
 div {
 	background-color: "blue";
 	border: 1px solid blue;

@@ -8,11 +8,26 @@ function etchABloc() {
 	this.sheet = element.sheet;
 	this.height = 16;
 	this.width = 16;
+	this.box = 1;
 	init();
 
 	function init() {
-		createGrid(this.height, this.width);
+		// TEST LINE:
 		addCSSRules('body', 'text-align: center; background-color: steelblue;', 0);
+
+		for(var idx = 1; idx < this.height; idx++) {
+			for(var jdx = 1; jdx < this.width; jdx++) {
+				// create css style grid
+				let selector = '.grid' + this.box
+				let rules = 'grid-column: col ' + jdx +
+					' / span 1; grid-row: row ' + idx + ' / span 1;'
+				addCSSRules(selector, rules, this.sheet.length);
+				this.box += 1;
+
+				// TO-DO:  create html grid
+
+			}
+		}
 	}
 
 	function createGrid(height, width) {
@@ -24,7 +39,8 @@ function etchABloc() {
 
 	function addCSSRules(selector, rules, index) {
 		if(typeof this.sheet !== 'undefined') {
-			this.sheet.insertRule(selector + "{" + rules + "}", index);
+			this.sheet.insertRule(selector + " { " + rules + " }", index);
+			console.log("Adding rule: " + selector + " {" + rules + " }" + ' to index: ' + index);
 		} else {
 			console.log("addCssRules:  stylesheet undefined!");
 		}

@@ -19,7 +19,7 @@ body {
 }
 
 /* row 1 */
-.grid1 { grid-column: col / span 1; grid-row: row / span 1; }
+.grid1 { grid-column: col 1 / span 1; grid-row: row / span 1; }
 .grid2 { grid-column: col 2 / span 1; grid-row: row / span 1; }
 .grid3 { grid-column: col 3 / span 1; grid-row: row / span 1; }
 .grid4 { grid-column: col 4 / span 1; grid-row: row / span 1; }
@@ -36,7 +36,7 @@ body {
 .grid15 { grid-column: col 15 / span 1; grid-row: row / span 1; }
 .grid16 { grid-column: col 16 / span 1; grid-row: row / span 1; }
 /* row 2 */
-.grid17 { grid-column: col / span 1; grid-row: row 2 / span 1; }
+.grid17 { grid-column: col 1 / span 1; grid-row: row 2 / span 1; }
 .grid18 { grid-column: col 2 / span 1; grid-row: row 2 / span 1; }
 .grid19 { grid-column: col 3 / span 1; grid-row: row 2 / span 1; }
 .grid20 { grid-column: col 4 / span 1; grid-row: row 2 / span 1; }
@@ -53,7 +53,7 @@ body {
 .grid31 { grid-column: col 15 / span 1; grid-row: row 2 / span 1; }
 .grid32 { grid-column: col 16 / span 1; grid-row: row 2 / span 1; }
 /* row 3 */
-.grid33 { grid-column: col / span 1; grid-row: row 3 / span 1; }
+.grid33 { grid-column: col  / span 1; grid-row: row 3 / span 1; }
 .grid34 { grid-column: col 2 / span 1; grid-row: row 3 / span 1; }
 .grid35 { grid-column: col 3 / span 1; grid-row: row 3 / span 1; }
 .grid36 { grid-column: col 4 / span 1; grid-row: row 3 / span 1; }
