@@ -8,6 +8,7 @@ body {
 .box {
 	width: minmax(20px, 50px);
 	height: 25px;
+	border: 1px solid blue;
 }
 
 .container {
@@ -17,127 +18,6 @@ body {
 	grid-template-rows: repeat(16);
 	grid-template-columns: repeat(16);	
 }
-
-/* row 1 */
-.grid1 { grid-column: col / span 1; grid-row: row / span 1; }
-.grid2 { grid-column: col 2 / span 1; grid-row: row / span 1; }
-.grid3 { grid-column: col 3 / span 1; grid-row: row / span 1; }
-.grid4 { grid-column: col 4 / span 1; grid-row: row / span 1; }
-.grid5 { grid-column: col 5 / span 1; grid-row: row / span 1; }
-.grid6 { grid-column: col 6 / span 1; grid-row: row / span 1; }
-.grid7 { grid-column: col 7 / span 1; grid-row: row / span 1; }
-.grid8 { grid-column: col 8 / span 1; grid-row: row / span 1; }
-.grid9 { grid-column: col 9 / span 1; grid-row: row / span 1; }
-.grid10 { grid-column: col 10 / span 1; grid-row: row / span 1; }
-.grid11 { grid-column: col 11 / span 1; grid-row: row / span 1; }
-.grid12 { grid-column: col 12 / span 1; grid-row: row / span 1; }
-.grid13 { grid-column: col 13 / span 1; grid-row: row / span 1; }
-.grid14 { grid-column: col 14 / span 1; grid-row: row / span 1; }
-.grid15 { grid-column: col 15 / span 1; grid-row: row / span 1; }
-.grid16 { grid-column: col 16 / span 1; grid-row: row / span 1; }
-/* row 2 */
-.grid17 { grid-column: col / span 1; grid-row: row 2 / span 1; }
-.grid18 { grid-column: col 2 / span 1; grid-row: row 2 / span 1; }
-.grid19 { grid-column: col 3 / span 1; grid-row: row 2 / span 1; }
-.grid20 { grid-column: col 4 / span 1; grid-row: row 2 / span 1; }
-.grid21 { grid-column: col 5 / span 1; grid-row: row 2 / span 1; }
-.grid22 { grid-column: col 6 / span 1; grid-row: row 2 / span 1; }
-.grid23 { grid-column: col 7 / span 1; grid-row: row 2 / span 1; }
-.grid24 { grid-column: col 8 / span 1; grid-row: row 2 / span 1; }
-.grid25 { grid-column: col 9 / span 1; grid-row: row 2 / span 1; }
-.grid26 { grid-column: col 10 / span 1; grid-row: row 2 / span 1; }
-.grid27 { grid-column: col 11 / span 1; grid-row: row 2 / span 1; }
-.grid28 { grid-column: col 12 / span 1; grid-row: row 2 / span 1; }
-.grid29 { grid-column: col 13 / span 1; grid-row: row 2 / span 1; }
-.grid30 { grid-column: col 14 / span 1; grid-row: row 2 / span 1; }
-.grid31 { grid-column: col 15 / span 1; grid-row: row 2 / span 1; }
-.grid32 { grid-column: col 16 / span 1; grid-row: row 2 / span 1; }
-/* row 3 */
-.grid33 { grid-column: col / span 1; grid-row: row 3 / span 1; }
-.grid34 { grid-column: col 2 / span 1; grid-row: row 3 / span 1; }
-.grid35 { grid-column: col 3 / span 1; grid-row: row 3 / span 1; }
-.grid36 { grid-column: col 4 / span 1; grid-row: row 3 / span 1; }
-.grid37 { grid-column: col 5 / span 1; grid-row: row 3 / span 1; }
-.grid38 { grid-column: col 6 / span 1; grid-row: row 3 / span 1; }
-.grid39 { grid-column: col 7 / span 1; grid-row: row 3 / span 1; }
-.grid40 { grid-column: col 8 / span 1; grid-row: row 3 / span 1; }
-.grid41 { grid-column: col 9 / span 1; grid-row: row 3 / span 1; }
-.grid42 { grid-column: col 10 / span 1; grid-row: row 3 / span 1; }
-.grid43 { grid-column: col 11 / span 1; grid-row: row 3 / span 1; }
-.grid44 { grid-column: col 12 / span 1; grid-row: row 3 / span 1; }
-.grid45 { grid-column: col 13 / span 1; grid-row: row 3 / span 1; }
-.grid46 { grid-column: col 14 / span 1; grid-row: row 3 / span 1; }
-.grid47 { grid-column: col 15 / span 1; grid-row: row 3 / span 1; }
-.grid48 { grid-column: col 16 / span 1; grid-row: row 3 / span 1; }
-/* row 4 */
-.grid49 { grid-column: col / span 1; grid-row: row 4 / span 1; }
-.grid50 { grid-column: col 2 / span 1; grid-row: row 4 / span 1; }
-.grid51 { grid-column: col 3 / span 1; grid-row: row 4 / span 1; }
-.grid52 { grid-column: col 4 / span 1; grid-row: row 4 / span 1; }
-.grid53 { grid-column: col 5 / span 1; grid-row: row 4 / span 1; }
-.grid54 { grid-column: col 6 / span 1; grid-row: row 4 / span 1; }
-.grid55 { grid-column: col 7 / span 1; grid-row: row 4 / span 1; }
-.grid56 { grid-column: col 8 / span 1; grid-row: row 4 / span 1; }
-.grid57 { grid-column: col 9 / span 1; grid-row: row 4 / span 1; }
-.grid58 { grid-column: col 10 / span 1; grid-row: row 4 / span 1; }
-.grid59 { grid-column: col 11 / span 1; grid-row: row 4 / span 1; }
-.grid60 { grid-column: col 12 / span 1; grid-row: row 4 / span 1; }
-.grid61 { grid-column: col 13 / span 1; grid-row: row 4 / span 1; }
-.grid62 { grid-column: col 14 / span 1; grid-row: row 4 / span 1; }
-.grid63 { grid-column: col 15 / span 1; grid-row: row 4 / span 1; }
-.grid64 { grid-column: col 16 / span 1; grid-row: row 4 / span 1; }
-/* row 5 */
-.grid65 { grid-column: col / span 1; grid-row: row 5 / span 1; }
-.grid66 { grid-column: col 2 / span 1; grid-row: row 5 / span 1; }
-.grid67 { grid-column: col 3 / span 1; grid-row: row 5 / span 1; }
-.grid68 { grid-column: col 4 / span 1; grid-row: row 5 / span 1; }
-.grid69 { grid-column: col 5 / span 1; grid-row: row 5 / span 1; }
-.grid70 { grid-column: col 6 / span 1; grid-row: row 5 / span 1; }
-.grid71 { grid-column: col 7 / span 1; grid-row: row 5 / span 1; }
-.grid72 { grid-column: col 8 / span 1; grid-row: row 5 / span 1; }
-.grid73 { grid-column: col 9 / span 1; grid-row: row 5 / span 1; }
-.grid74 { grid-column: col 10 / span 1; grid-row: row 5 / span 1; }
-.grid75 { grid-column: col 11 / span 1; grid-row: row 5 / span 1; }
-.grid76 { grid-column: col 12 / span 1; grid-row: row 5 / span 1; }
-.grid77 { grid-column: col 13 / span 1; grid-row: row 5 / span 1; }
-.grid78 { grid-column: col 14 / span 1; grid-row: row 5 / span 1; }
-.grid79 { grid-column: col 15 / span 1; grid-row: row 5 / span 1; }
-.grid80 { grid-column: col 16 / span 1; grid-row: row 5 / span 1; }
-/* row 6 */
-.grid65 { grid-column: col / span 1; grid-row: row 6 / span 1; }
-.grid66 { grid-column: col 2 / span 1; grid-row: row 6 / span 1; }
-.grid67 { grid-column: col 3 / span 1; grid-row: row 6 / span 1; }
-.grid68 { grid-column: col 4 / span 1; grid-row: row 6 / span 1; }
-.grid69 { grid-column: col 5 / span 1; grid-row: row 6 / span 1; }
-.grid70 { grid-column: col 6 / span 1; grid-row: row 6 / span 1; }
-.grid71 { grid-column: col 7 / span 1; grid-row: row 6 / span 1; }
-.grid72 { grid-column: col 8 / span 1; grid-row: row 6 / span 1; }
-.grid73 { grid-column: col 9 / span 1; grid-row: row 6 / span 1; }
-.grid74 { grid-column: col 10 / span 1; grid-row: row 6 / span 1; }
-.grid75 { grid-column: col 11 / span 1; grid-row: row 6 / span 1; }
-.grid76 { grid-column: col 12 / span 1; grid-row: row 6 / span 1; }
-.grid77 { grid-column: col 13 / span 1; grid-row: row 6 / span 1; }
-.grid78 { grid-column: col 14 / span 1; grid-row: row 6 / span 1; }
-.grid79 { grid-column: col 15 / span 1; grid-row: row 6 / span 1; }
-.grid80 { grid-column: col 16 / span 1; grid-row: row 6 / span 1; }
-/* row 7 */
-
-/* row 8 */
-
-/* row 9 */
-/* row 10 */
-
-/* row 11 */
-
-/* row 12 */
-
-/* row 13 */
-
-/* row 14 */
-
-/* row 15 */
-
-/* row 16 */
 
 div {
 	background-color: "blue";
