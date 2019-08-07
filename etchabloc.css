@@ -2,6 +2,12 @@
 
 
 /* Elements */
+a:active, a:focus, button {
+	outline: 0;
+	border: none;
+	-moz-outline-style: none;
+}
+
 body {
 	font-family: 'Londrina Sketch', cursive;
 	color: white;
@@ -21,21 +27,31 @@ h1 {
 
 
 /* Classes */
-.dot {
+.knob {
+	color: rgb(219, 20, 20);
+	font-weight: 1000; 
+	text-shadow: 1px 1px 1px #555555;
 	height: 75px;
 	width: 75px;
-	background-color: white;
-	border: 1px solid grey;
 	border-radius: 50%;
+	box-shadow: 7px 7px 4px #4444;
+	background-color: rgb(255,241,240);
+	border: 1px solid grey;	
 	display: inline-block;
+	/*background: radial-gradient(ellipse at 33%, rgb(165,148,140), rgb(255,241,240));*/
+	background: repeating-radial-gradient(circle, rgb(235,221,219), rgb(207,207,207) 5px, rgb(235,221,219) 10px, rgb(207,207,207) 20px);
 }
 
-.leftctrl {
+.knob:hover {
+	background: repeating-radial-gradient(circle, white, rgb(207,207,207) 5px, white 10px, rgb(207,207,207) 20px);
+}
+
+.reset {
 	float: left;
 	margin: 15px;
 }
 
-.rightctrl {
+.mode {
 	float: right;
 	margin: 15px;
 }

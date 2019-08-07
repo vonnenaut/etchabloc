@@ -11,6 +11,8 @@ function etchABloc() {
 	this.screenWidth = 500; // size of screen itself
 	this.screenHeight = 350;
 	this.screen = undefined;
+	this.resetListener = undefined;
+	this.modeListener = undefined;
 	init();
 
 	function init() {
@@ -18,11 +20,15 @@ function etchABloc() {
 		this.screen = initScreen(this.height, this.width, this.screenHeight, this.screenWidth);
 		//add css grid and html grid to screen
 		createGrid();
-		//set up event listener for screen
+		// add screen event listener
 		screen.addEventListener("mouseover", function( event ) {
 			event.target.style.background = "black";
 		})
-
+		// add reset button event listener
+		let reset = document.getElementById('reset');
+		let mode = document.getElementById('mode');
+		this.resetListener = reset.addEventListener("click", function(){console.log('reset clicked')});
+		this.modeListener = mode.addEventListener("click", function(){console.log('mode clicked')});
 	}
 
 	function addHTMLGrid(selector, boxNumber) {
@@ -74,6 +80,13 @@ function etchABloc() {
 			}
 		}
 	}
+
+	// function resetScreen() {
+	// 	boxArray = document.getElementsByClass('box');
+	// 	boxArray.forEach(function (item)) {
+	// 		item.style.background = rgb(107,107,107);
+	// 	}
+	// }
 	
 };
 
