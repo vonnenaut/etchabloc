@@ -2,11 +2,50 @@
 
 /* Elements */
 body {
-	padding: 0;
-	margin: 0 auto;
+	color: white;
 	text-align: center;
+	background-color: black;
+	padding: 0;
+	margin: 0 auto;	
 }
 
-/* Classes */
+h1 
 
+#case {
+	width: 600px;
+	height: 600px;
+}
+
+#container {
+	width: 100%; 
+	margin: 0 auto; 
+	padding: 0; 
+	display: grid; 
+	grid-template-rows: repeat(${this.height}) 1fr;
+	grid-template-columns: repeat(${this.width}) 1fr; 
+	grid-row-gap: 0;grid-column-gap: 0;'
+}
+
+#border {
+	margin: 0 auto;
+	border: 70px solid rgb(235, 51, 38);
+	border-radius: 20px;
+}
+
+#screen {
+	width: 500px;
+	height: 350px;
+	background-color: grey;
+	margin: 0 auto;
+	border: 1px dotted black;
+}
+  
+/* Classes */
+.box {
+	width: 2.5em;
+	height: 2.5em;
+	border: 1px solid blue;
+	padding: 0;
+	margin: 0;
+}
 /* IDs */

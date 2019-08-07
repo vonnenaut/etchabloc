@@ -12,11 +12,7 @@ function etchABloc() {
 
 	function init() {
 		let box = 1;
-		// TEST LINES:
-		addCSSRules('body', 'text-align: center; background-color: steelblue;', 0);
-
-		// TO-DO:  t/s container is null
-		var container = document.getElementById('container');
+		var screen = document.getElementById('screen');
 		
 		for(var idx = 1; idx <= this.height; idx++) {
 			for(var jdx = 1; jdx <= this.width; jdx++) {
@@ -27,30 +23,29 @@ function etchABloc() {
 				addCSSRules(selector, rules, box);
 				
 				// create html grid
-				addHTMLGrid(container, box);
+				addHTMLGrid(screen, box);
 
 				box += 1;
 			}
 		}
 
-		addCSSRules('.container', 'width: 90%; margin: 0 auto 0 auto; 	display: grid; grid-template-rows: repeat(16); grid-template-columns: repeat(16);', this.sheet.cssRules.length);
-		addCSSRules('.box', 'width: 25px; height: 25px; border: 1px solid blue;', this.sheet.cssRules.length);
-
+		// addCSSRules('.container', 'width: 100%; margin: 0 auto; padding: 0; display: grid; grid-template-rows: repeat(${this.height}) 1fr; grid-template-columns: repeat(${this.width}) 1fr; grid-row-gap: 0;grid-column-gap: 0;', this.sheet.cssRules.length);
+		// addCSSRules('.box', 'width: 2.5em; height: 2.5em; border: 1px solid blue; padding: 0; margin: 0;', this.sheet.cssRules.length);
 	}
 
-	function addHTMLGrid(container, boxNumber) {
+	function addHTMLGrid(selector, boxNumber) {
 		let construct = '<div class=\"box grid' + boxNumber + '\"></div>'
-		if(typeof container !== 'undefined' && typeof container !== 'null') {
-			container.innerHTML += construct
+		if(typeof selector !== 'undefined' && typeof selector !== 'null') {
+			selector.innerHTML += construct
 		} else {
-			console.log("addHTMLGrid:  container undefined!")
+			console.log("addHTMLGrid:  selector undefined!")
 		}
 	}
 
 	function addCSSRules(selector, rules, index) {
 		if(typeof this.sheet !== 'undefined') {
 			this.sheet.insertRule(selector + " { " + rules + " }", index);
-			console.log("Adding rule: \'" + selector + " {" + rules + " }'" + ' to index: ' + index);
+			// console.log("Adding rule: \'" + selector + " {" + rules + " }'" + ' to index: ' + index);
 		} else {
 			console.log("addCSSRules:  stylesheet undefined!");
 		}
