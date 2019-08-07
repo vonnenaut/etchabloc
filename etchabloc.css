@@ -2,6 +2,7 @@
 
 /* Elements */
 body {
+	font-family: 'Londrina Sketch', cursive;
 	color: white;
 	text-align: center;
 	background-color: black;
@@ -9,11 +10,11 @@ body {
 	margin: 0 auto;	
 }
 
-h1 
-
-#case {
-	width: 600px;
-	height: 600px;
+h1 {
+	font-size: 260%;
+	text-shadow: 2px 2px #ff0000;
+	margin: 10px auto 10px auto;
+	padding: 0;
 }
 
 #container {
@@ -27,25 +28,50 @@ h1
 }
 
 #border {
+	width: 500px;
+	height: 375px;
 	margin: 0 auto;
-	border: 70px solid rgb(235, 51, 38);
-	border-radius: 20px;
+	border: 70px solid rgb(219, 20, 20);
+	border-radius: 5px;
+	background-color: rgb(219, 20, 20);
 }
 
 #screen {
 	width: 500px;
 	height: 350px;
-	background-color: grey;
+	background-color: rgb(212,208,207);
 	margin: 0 auto;
-	border: 1px dotted black;
+	border: 1px solid black;
+	border-radius: 15px;
 }
   
 /* Classes */
 .box {
 	width: 2.5em;
 	height: 2.5em;
-	border: 1px solid blue;
+	border: 1px solid rgb(107,107,107);
 	padding: 0;
 	margin: 0;
 }
+
+.dot {
+	height: 75px;
+	width: 75px;
+	background-color: white;
+	border: 1px solid grey;
+	border-radius: 50%;
+	display: inline-block;
+}
+
+.leftctrl {
+	float: left;
+	margin: 15px;
+}
+
+.rightctrl {
+	float: right;
+	margin: 15px;
+}
+
+
 /* IDs */

@@ -20,7 +20,7 @@ function etchABloc() {
 				let selector = '.grid' + box
 				let rules = 'grid-column: col ' + jdx +
 					' / span 1; grid-row: row ' + idx + ' / span 1;'
-				addCSSRules(selector, rules, box);
+				addCSSRules(selector, rules, this.sheet.cssRules.length);
 				
 				// create html grid
 				addHTMLGrid(screen, box);
@@ -28,9 +28,6 @@ function etchABloc() {
 				box += 1;
 			}
 		}
-
-		// addCSSRules('.container', 'width: 100%; margin: 0 auto; padding: 0; display: grid; grid-template-rows: repeat(${this.height}) 1fr; grid-template-columns: repeat(${this.width}) 1fr; grid-row-gap: 0;grid-column-gap: 0;', this.sheet.cssRules.length);
-		// addCSSRules('.box', 'width: 2.5em; height: 2.5em; border: 1px solid blue; padding: 0; margin: 0;', this.sheet.cssRules.length);
 	}
 
 	function addHTMLGrid(selector, boxNumber) {
@@ -45,7 +42,6 @@ function etchABloc() {
 	function addCSSRules(selector, rules, index) {
 		if(typeof this.sheet !== 'undefined') {
 			this.sheet.insertRule(selector + " { " + rules + " }", index);
-			// console.log("Adding rule: \'" + selector + " {" + rules + " }'" + ' to index: ' + index);
 		} else {
 			console.log("addCSSRules:  stylesheet undefined!");
 		}
