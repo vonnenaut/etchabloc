@@ -18,7 +18,11 @@ function etchABloc() {
 		this.screen = initScreen(this.height, this.width, this.screenHeight, this.screenWidth);
 		//add css grid and html grid to screen
 		createGrid();
-		//set up event listeners
+		//set up event listener for screen
+		screen.addEventListener("mouseover", function( event ) {
+			event.target.style.background = "black";
+		})
+
 	}
 
 	function addHTMLGrid(selector, boxNumber) {
@@ -42,14 +46,14 @@ function etchABloc() {
 		let screen = document.getElementById('screen');
 		let boxWidth = screenw / width;
 		let boxHeight = screenh / height;
-		console.log("boxWidth: ", boxWidth);
-		console.log("boxHeight: ", boxHeight);
 
 		// add css for screen's grid
 		addCSSRules('#screen', 'width: ${screenw}px; height: 350px; background-color: rgb(212,208,207); margin: 0 auto; border: 1px solid black; border-radius: 15px; display: grid; grid-template-rows: repeat(${height}) 1fr; grid-template-columns: repeat(${width}) 1fr; grid-gap: 0;', this.sheet.cssRules.length);
 
 		// add css for box class inside screen container
 		addCSSRules('.box', 'width: ${boxWidth}px; height: ${boxHeight}; border: 1px solid rgb(107,107,107); padding: 0; margin: 0;');
+
+
 		return screen;
 	}
 
