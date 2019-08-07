@@ -1,5 +1,6 @@
 /* css stylesheet for etchabloc.html */
 
+
 /* Elements */
 body {
 	font-family: 'Londrina Sketch', cursive;
@@ -11,26 +12,13 @@ body {
 }
 
 h1 {
+	color: rgb(235,168,54);
 	font-size: 260%;
-	text-shadow: 2px 2px #ff0000;
-	margin: 10px auto 10px auto;
+	text-shadow: 2px 2px #555555;
+	margin: 0 auto 5px auto;
 	padding: 0;
 }
 
-#container {
-	width: 100%; 
-	margin: 0 auto; 
-	padding: 0; 
-}
-
-#border {
-	width: 500px;
-	height: 375px;
-	margin: 0 auto;
-	border: 70px solid rgb(219, 20, 20);
-	border-radius: 5px;
-	background-color: rgb(219, 20, 20);
-}
 
 /* Classes */
 .dot {
@@ -54,3 +42,18 @@ h1 {
 
 
 /* IDs */
+#container {
+	width: 100%; 
+	margin: 0 auto; 
+	padding: 0; 
+}
+
+#border {
+	width: 500px;
+	height: 450px;
+	margin: 30px auto;
+	padding: 0;
+	border: 60px solid rgb(219, 20, 20);
+	border-radius: 5px;
+	background-color: rgb(219, 20, 20);
+}
