@@ -2,51 +2,29 @@
 
 */
 function etchABloc() {	
-	/* variable definitions */
-	var element = document.createElement('style'), sheet;
-	document.head.appendChild(element);
-	this.sheet = element.sheet;
-	this.height = 16; // number of squares in grid
-	this.width = 16;
-	this.screenWidth = 500; // size of screen itself
-	this.screenHeight = 350;
-	this.screen = undefined;
-	this.resetListener = undefined;
-	this.modeListener = undefined;
 	init();
 
 	function init() {
+		/* variable definitions */
+		var element = document.createElement('style'), sheet;
+		document.head.appendChild(element);
+		this.sheet = element.sheet;
+		this.height = 16; // number of squares in grid
+		this.width = 16;
+		this.screenWidth = 500; // size of screen itself
+		this.screenHeight = 350;
+		this.screen = undefined;
+		this.resetListener = undefined;
+		this.modeListener = undefined;
+
 		// initialize and set up screen
 		this.screen = initScreen(this.height, this.width, this.screenHeight, this.screenWidth);
 		//add css grid and html grid to screen
 		createGrid();
-		// add screen event listener
-		screen.addEventListener("mouseover", function( event ) {
-			event.target.style.background = "black";
-		})
-		// add reset button event listener
-		let reset = document.getElementById('reset');
-		let mode = document.getElementById('mode');
-		this.resetListener = reset.addEventListener("click", function(){console.log('reset clicked')});
-		this.modeListener = mode.addEventListener("click", function(){console.log('mode clicked')});
+		// add event listeners
+		addEventListeners();
 	}
 
-	function addHTMLGrid(selector, boxNumber) {
-		let construct = '<div class=\"box grid' + boxNumber + '\"></div>'
-		if(typeof selector !== 'undefined' && typeof selector !== 'null') {
-			selector.innerHTML += construct
-		} else {
-			console.log("addHTMLGrid:  selector undefined!")
-		}
-	}
-
-	function addCSSRules(selector, rules, index) {
-		if(typeof this.sheet !== 'undefined') {
-			this.sheet.insertRule(selector + " { " + rules + " }", index);
-		} else {
-			console.log("addCSSRules:  stylesheet undefined!");
-		}
-	}
 
 	function initScreen(height, width, screenh, screenw) {		
 		let screen = document.getElementById('screen');
@@ -59,9 +37,9 @@ function etchABloc() {
 		// add css for box class inside screen container
 		addCSSRules('.box', 'width: ${boxWidth}px; height: ${boxHeight}; border: 1px solid rgb(107,107,107); padding: 0; margin: 0;');
 
-
 		return screen;
 	}
+
 
 	function createGrid() {
 		let box = 0; // counter for labeling box id's
@@ -81,13 +59,46 @@ function etchABloc() {
 		}
 	}
 
-	// function resetScreen() {
-	// 	boxArray = document.getElementsByClass('box');
-	// 	boxArray.forEach(function (item)) {
-	// 		item.style.background = rgb(107,107,107);
-	// 	}
-	// }
-	
+
+	function addCSSRules(selector, rules, index) {
+		if(typeof this.sheet !== 'undefined') {
+			this.sheet.insertRule(selector + " { " + rules + " }", index);
+		} else {
+			console.log("addCSSRules:  stylesheet undefined!");
+		}
+	}
+
+
+	function addHTMLGrid(selector, boxNumber) {
+		let construct = '<div class=\"box grid' + boxNumber + '\"></div>'
+		if(typeof selector !== 'undefined' && typeof selector !== 'null') {
+			selector.innerHTML += construct
+		} else {
+			console.log("addHTMLGrid:  selector undefined!")
+		}
+	}
+
+
+	function addEventListeners() {
+		screen.addEventListener("mouseover", function( event ) {
+			event.target.style.background = "black";
+		})
+		// add reset button event listener
+		let resetBtn = document.getElementById('reset');
+		let modeBtn = document.getElementById('mode');
+		this.resetListener = resetBtn.addEventListener("click", function(){resetScreen()});
+		this.modeListener = modeBtn.addEventListener("click", function(){console.log('mode clicked')});
+	}
+
+
+	function resetScreen() {
+		boxArray = document.getElementsByClassName('box');
+
+		for(idx=0; idx <boxArray.length; idx++) {
+			boxArray[idx].style.background = "rgb(212,208,207)";
+		};
+	}	
 };
+
 
 window.onload = etchABloc();

@@ -34,11 +34,10 @@ h1 {
 	height: 75px;
 	width: 75px;
 	border-radius: 50%;
-	box-shadow: 7px 7px 4px #4444;
+	box-shadow: 7px 7px 4px #3333;
 	background-color: rgb(255,241,240);
-	border: 1px solid grey;	
+	border: 1px solid grey;
 	display: inline-block;
-	/*background: radial-gradient(ellipse at 33%, rgb(165,148,140), rgb(255,241,240));*/
 	background: repeating-radial-gradient(circle, rgb(235,221,219), rgb(207,207,207) 5px, rgb(235,221,219) 10px, rgb(207,207,207) 20px);
 }
 
