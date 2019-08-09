@@ -1,5 +1,9 @@
 /* css stylesheet for etchabloc.html */
 
+/* Variables */
+:root {
+	--dimension: 16;
+}
 
 /* Elements */
 a:active, a:focus, button {
@@ -27,6 +31,10 @@ h1 {
 
 
 /* Classes */
+.box {
+
+}
+
 .knob {
 	color: rgb(219, 20, 20);
 	font-weight: 1000; 
@@ -45,24 +53,18 @@ h1 {
 	background: repeating-radial-gradient(circle, white, rgb(207,207,207) 5px, white 10px, rgb(207,207,207) 20px);
 }
 
-.reset {
-	float: left;
-	margin: 15px;
-}
-
 .mode {
 	float: right;
 	margin: 15px;
 }
 
-
-/* IDs */
-#container {
-	width: 100%; 
-	margin: 0 auto; 
-	padding: 0; 
+.reset {
+	float: left;
+	margin: 15px;
 }
 
+
+/* IDs */
 #border {
 	width: 500px;
 	height: 450px;
@@ -71,4 +73,24 @@ h1 {
 	border: 60px solid rgb(219, 20, 20);
 	border-radius: 5px;
 	background-color: rgb(219, 20, 20);
+}
+
+#container {
+	width: 100%; 
+	margin: 0 auto; 
+	padding: 0; 
+}
+
+#screen {
+	width: 500px; 
+	height: 350px; 
+	border-radius: 15px;
+	background-color: rgb(212,208,207); 
+	margin: 0 auto; 
+	border: 1px solid black;
+	border-radius: 15px; 
+	display: grid; 
+	grid-template-rows: repeat(--dimension) 1fr; 
+	grid-template-columns: repeat(--dimension) 1fr; 
+	grid-gap: 0;
 }

@@ -4,6 +4,7 @@
 function etchABloc() {	
 	init();
 
+	///// Initializer //////////////////////////////////
 	function init() {
 		/* variable definitions */
 		this.dimension = 16; // number of squares on a side for grid
@@ -29,33 +30,25 @@ function etchABloc() {
 		let boxHeight = screenh / dimension;
 
 		// create css for current grid layout
-		createStyleSheet();	
+		createStyleSheet();
 
-		// add css for screen's grid
-		addCSSRules('#screen', 'width: ${screenw}px; height: 350px; background-color: rgb(212,208,207); margin: 0 auto; border: 1px solid black; border-radius: 15px; display: grid; grid-template-rows: repeat(${dimension}) 1fr; grid-template-columns: repeat(${dimension}) 1fr; grid-gap: 0;', this.sheet.cssRules.length);
+		// add css for screen's grid -- moved this to css using variable '--dimension'
+		// addCSSRules('#screen', 'width: ${screenw}px; height: 350px; background-color: rgb(212,208,207); margin: 0 auto; border: 1px solid black; border-radius: 15px; display: grid; grid-template-rows: repeat(${dimension}) 1fr; grid-template-columns: repeat(${dimension}) 1fr; grid-gap: 0;', this.sheet.cssRules.length);
+		document.documentElement.style.setProperty('--dimension', dimension);
 
 		// add css for box class inside screen container
 		addCSSRules('.box', 'width: ${boxWidth}px; height: ${boxHeight}; border: 1px solid rgb(107,107,107); padding: 0; margin: 0;');
+		console.log("document.styleSheets: ", document.styleSheets);
 
 		return screen;
-	}
-
-
-	function createStyleSheet() {
-		var element = document.createElement('style'), sheet;
-		document.head.appendChild(element);
-		this.sheet = element.sheet;
 	}
 
 
 	function createGrid() {
 		let box = 0; // counter for labeling box id's
 
-		// check for existing grid in case of reset and remove both html and css
-		clearGrid()
-
-		// create new css
-		createStyleSheet();
+		// remove existing HTML grid divs
+		this.screen.innerHTML = '';
 
 		if(this.dimension > 0 && this.dimension < 65) {
 			for(var idx = 0; idx < this.dimension; idx++) {
@@ -131,18 +124,11 @@ function etchABloc() {
 	}
 
 
-	function clearGrid() {
-		// remove html elements from page
-		// var boxes = document.getElementsByClassName('box');
-		// while(boxes[0]) {
-		// 	boxes[0].parentNode.removeChild(boxes[0]);
-		// }
-		this.screen.innerHTML = '';
-
-		// TO-DO:  remove css -- the below doesn't work
-		// if (typeof this.sheet != 'undefined') {
-		// 	this.sheet.parentNode.removeChild(this.sheet);
-		// }
+	///// Helper Functions //////////////////////////////////
+	function createStyleSheet() {
+		var element = document.createElement('style'), sheet;
+		document.head.appendChild(element);
+		this.sheet = element.sheet;
 	}
 };
 
