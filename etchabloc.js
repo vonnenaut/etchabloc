@@ -4,7 +4,8 @@
 const etchABloc = {
 	///// Initializer //////////////////////////////////
 	init: function(dimension) {
-		/* variable definitions */
+		/* Initializes object 
+		*/
 		this.dimension = dimension; // number of grid squares on a side
 		this.screenWidth = 500; // size of screen
 		this.screenHeight = 350;
@@ -23,6 +24,8 @@ const etchABloc = {
 
 	///// Button-handling////////////////////////////////
 	reset: function() {
+		/* resets object upon user input
+		*/
 		this.sheet = this.addStyleSheet;	// initialize new stylesheet for new grid
 		var input = 0;	
 
@@ -34,7 +37,7 @@ const etchABloc = {
 		// set grid variables and reinitialize grid
 		this.dimension = input;
 
-		this.addGrid(this.dimension, this.screenHeight, this.screenWidth);
+		this.addGrid(this.screen, this.dimension, this.screenHeight, this.screenWidth);
 		// this.addEventListeners();
 	},
 
@@ -43,26 +46,10 @@ const etchABloc = {
 
 	///// Methods /////////////////////////////////////
 	addGrid: function(screen, dimension, screenh, screenw) {
-		let boxWidth = screenw / dimension;
-		let boxHeight = screenh / dimension;
-		let box = 0; // counter for labeling box id's
-
-		// remove existing HTML grid divs
-		screen.innerHTML = '';
-
-		//remove existing dynamic css and set css variable to new grid dimensions
-		// document.styleSheetList[]
-			// add css for screen's grid -- moved this to css using variable '--dimension'
-		// addCSSRules('#screen', 'width: ${screenw}px; height: 350px; background-color: rgb(212,208,207); margin: 0 auto; border: 1px solid black; border-radius: 15px; display: grid; grid-template-rows: repeat(${dimension}) 1fr; grid-template-columns: repeat(${dimension}) 1fr; grid-gap: 0;', this.sheet.cssRules.length);
-		document.documentElement.style.setProperty('--dimension', dimension);
-
-		// add css for box class inside screen container
-		this.addCSSRules('.box', 'width: ${boxWidth}px; height: ${boxHeight}; border: 1px solid rgb(107,107,107); padding: 0; margin: 0;');
-		// should probably add housekeeping to delete old css sheet when resizing grid --  this should also be along the lines of getting functionality to work as well
-		console.log("document.styleSheets: ", document.styleSheets);
-		// console.log("Deleting old sheet...")
-		// document.stylesheets
-		// console.log
+		/* adds grid HTML and CSS to screen container 
+		with help of reinitGrid
+		*/
+		this.reinitGrid();
 
 		if(dimension > 0 && dimension < 65) {
 			for(var idx = 0; idx < dimension; idx++) {
@@ -82,8 +69,34 @@ const etchABloc = {
 	},
 
 
+	reinitGrid: function() {
+		/* 	Helper function for addGrid
+			removes screen's HTML 
+			and updates css variable to
+			new user-input grid size
+		*/
+
+		let boxWidth = screenw / dimension;
+		let boxHeight = screenh / dimension;
+		let box = 0; // counter for labeling box id's
+
+		// remove existing HTML grid divs
+		screen.innerHTML = '';
+
+		// update css variable to new user-input grid size
+		document.documentElement.style.setProperty('--dimension', dimension);
+
+		// add css for box class inside screen container
+		this.addCSSRules('.box', 'width: ${boxWidth}px; height: ${boxHeight}; border: 1px solid rgb(107,107,107); padding: 0; margin: 0;');
+		// for troubleshooting:
+		console.log("document.styleSheets: ", document.styleSheets);
+	}
+
+
 	///// Helpers //////////////////////////////////////////
 	addEventListeners: function() {
+		/* 	Adds event listeners to the two buttons,
+			'Reset' and 'Mode'*/
 		this.screen.addEventListener("mouseover", function( event ) {
 			event.target.style.background = "black";
 		})
@@ -95,6 +108,8 @@ const etchABloc = {
 	},
 
 	addCSSRules: function(selector, rules, index) {
+		/*  Adds CSS rules to JS-created dynamic stylesheet
+		*/
 		if(typeof this.sheet !== 'undefined') {
 			this.sheet.insertRule(selector + " { " + rules + " }", index);
 		} else {
@@ -103,6 +118,8 @@ const etchABloc = {
 	},
 
 	addHTMLGrid: function(selector, boxNumber) {
+		/*  Adds an HTML grid of divs to screen container 
+		*/
 		let construct = '<div class=\"box grid' + boxNumber + '\"></div>'
 		if(typeof selector !== 'undefined' && typeof selector !== 'null') {
 			selector.innerHTML += construct
@@ -112,10 +129,8 @@ const etchABloc = {
 	},
 
 	addStyleSheet: function() {
-		// // TO-DO:  If there are any sheets created by this script, remove them before creating another
-		// while(document.styleSheets.length > 2) {
-		// 	delete document.styleSheets[document.styleSheets.length-1];
-		// }
+		/*  Adds a new dynamic stylesheet to the DOM
+		*/
 		let element = document.createElement('style');
 		document.head.appendChild(element);
 		return element.sheet;
