@@ -49,7 +49,9 @@ const etchABloc = {
 		/* adds grid HTML and CSS to screen container 
 		with help of reinitGrid
 		*/
-		this.reinitGrid();
+		let box = 0; // counter for labeling box id's
+		
+		this.reinitGrid(dimension, screenw, screenh);
 
 		if(dimension > 0 && dimension < 65) {
 			for(var idx = 0; idx < dimension; idx++) {
@@ -69,16 +71,15 @@ const etchABloc = {
 	},
 
 
-	reinitGrid: function() {
+	reinitGrid: function(dimension, width, height) {
 		/* 	Helper function for addGrid
 			removes screen's HTML 
 			and updates css variable to
 			new user-input grid size
 		*/
-
-		let boxWidth = screenw / dimension;
-		let boxHeight = screenh / dimension;
-		let box = 0; // counter for labeling box id's
+		let boxWidth = width / dimension;
+		let boxHeight = height / dimension;
+		
 
 		// remove existing HTML grid divs
 		screen.innerHTML = '';
@@ -90,7 +91,7 @@ const etchABloc = {
 		this.addCSSRules('.box', 'width: ${boxWidth}px; height: ${boxHeight}; border: 1px solid rgb(107,107,107); padding: 0; margin: 0;');
 		// for troubleshooting:
 		console.log("document.styleSheets: ", document.styleSheets);
-	}
+	},
 
 
 	///// Helpers //////////////////////////////////////////
